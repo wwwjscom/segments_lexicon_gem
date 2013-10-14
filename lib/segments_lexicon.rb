@@ -1,7 +1,7 @@
 require 'sqlite3'
 require "segments_lexicon/version"
 
-module SegmentsLexicon
+class SegmentsLexicon
   # Opens a connection to the db
   #
   # param sqlite_db_path [String] Path to the sqlite3 db file
