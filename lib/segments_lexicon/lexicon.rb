@@ -1,6 +1,6 @@
 require 'sqlite3'
 
-class SegmentsLexicon
+class Lexicon
 
   # Opens a connection to the db
   #
@@ -13,7 +13,7 @@ class SegmentsLexicon
   end
 
   def search(query_term)
-    results = @db.execute "select * from #{@table} WHERE LCASE(word) LIKE LCASE(\"#{query_term}\")"
+    results = @db.execute "select * from #{@table} WHERE word LIKE \"#{query_term.downcase}\" COLLATE NOCASE"
   end
 
 end
